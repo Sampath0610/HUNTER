@@ -1,0 +1,48 @@
+#include<stdio.h>
+void main()
+{
+    int a[50],b[50],n,i,j,k=0,p,q,temp,f,count=0,d=0;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            if(a[i]==a[j])
+            {
+                temp=a[i];
+                b[k]=temp;
+                k++;
+                count++;
+            }
+            else
+            {
+                d++;
+            }
+        }
+    }
+    for(p=0;p<count;p++)
+    {
+        for(q=p+1;q<count;q++)
+        {
+            if(b[p]>b[q])
+            {
+                f=b[p];
+                b[p]=b[q];
+                b[q]=f;
+            }
+        }
+    }
+    for(p=0;p<count;p++)
+    {
+    printf("%d",b[p]);
+    }
+    if(d>1)
+    {
+        printf("unique");
+    }
+}   
+    
